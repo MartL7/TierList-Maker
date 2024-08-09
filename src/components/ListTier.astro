@@ -1,0 +1,45 @@
+---
+import { listTiers } from '@/const/listTiers'
+---
+
+<section class="flex flex-col justify-center items-center mb-20 gap-7 max-w-4xl">
+  <div class="flex flex-col justify-center items-center gap-4 text-center">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl">
+      Elige alguna TierList para <span class="text-blue-600/90"> comenzar </span>
+    </h2>
+
+    <p class="px-10 text-[18px] text-white/80 text-center [text-wrap:balance]">
+      Divulgadores y profesionales de programación y la tecnología.
+    </p>
+  </div>
+
+  <aside class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-5 sm:p-0">
+    {
+      listTiers.map(({ id, imagePresentation, name }) => (
+        <article class="relative flex flex-col items-center justify-center w-full transition-all bg-[#121226]/50 border border-midu-primary/40 rounded-[20px] group overflow-hidden">
+          <div class="w-full p-[14px] rounded transition">
+            <figure class="flex items-center justify-center">
+              <img
+                decoding="async"
+                loading="lazy"
+                class="object-cover w-full aspect-square rounded-[10px]"
+                src={imagePresentation}
+                alt={`${id}-${name}`}
+              />
+              <img
+                decoding="async"
+                loading="lazy"
+                class="absolute opacity-70 transform-gpu blur-lg -z-10 block object-cover w-full aspect-square transition bg-white rounded-[10px]"
+                src={imagePresentation}
+                alt={`${id}-${name}`}
+              />
+            </figure>
+            <header class="flex items-center justify-center mt-4 gap-x-2">
+              <h3 class="text-[16px] font-bold text-center text-primary">{name}</h3>
+            </header>
+          </div>
+        </article>
+      ))
+    }
+  </aside>
+</section>
