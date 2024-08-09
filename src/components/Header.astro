@@ -1,0 +1,29 @@
+---
+import GithubIcon from '@/components/icons/Github.astro'
+import InstagramIcon from '@/components/icons/Instagram.astro'
+---
+
+<header class="flex justify-between items-center p-5 mb-10 md:mb-20">
+  <aside class="ml-auto">
+    <div class="flex justify-center items-center gap-5">
+      <a 
+        href="https://github.com/MartL7/" 
+        aria-label="Ir al Github del Creador" 
+        rel="noopener noreferrer"
+        target="_blank"
+        class="inline-block"
+      >
+        <GithubIcon class="size-7 hover:scale-110 hover:text-gray-600/90 transition" />
+      </a>
+      <a 
+        href="https://www.instagram.com/geovx_lg/" 
+        aria-label="Ir al Instagram del Creador" 
+        rel="noopener noreferrer"
+        target="_blank"
+        class="inline-block"
+      >
+        <InstagramIcon class="size-8 hover:scale-110 hover:text-red-400/90 transition" />
+      </a>
+    </div>
+  </aside>
+</header>
